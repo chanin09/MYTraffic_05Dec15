@@ -1,6 +1,8 @@
 package apprtc.chanin.mytraffic;
 
+import android.content.Intent;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +37,10 @@ public class MainActivity extends AppCompatActivity {
                 //sound effect
                 MediaPlayer buttonMediaPlayer = MediaPlayer.create(getBaseContext(), R.raw.mosquito);
                 buttonMediaPlayer.start();
-
+                //intent to WebView
+                Intent objIntent = new Intent(Intent.ACTION_VIEW);
+                objIntent.setData(Uri.parse("https://youtu.be/yzTuBuRdAyA"));
+                startActivity(objIntent);
             } // event
         });
     }
